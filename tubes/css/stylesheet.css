@@ -1,0 +1,205 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* .......................Navbar.................. */
+.navbar {
+  background-color: white;
+}
+.navbar-brand {
+  font-size: 2rem;
+  color: #282a3a;
+  font-family: "Koulen", cursive;
+  font-weight: bold;
+}
+.nav-item a {
+  color: #282a3a;
+  font-family: "ABeeZee", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.nav-item a:hover {
+  color: #39b5e0;
+}
+
+.navbar .nav-link {
+  font-size: 1.5em;
+}
+.navbar input {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navbar form {
+  width: 60%;
+  margin-left: auto;
+}
+
+/* .....................Tombol pencarian................ */
+.search {
+  height: 40px;
+  width: 80%;
+  border-radius: 30px;
+  outline: none;
+  margin-right: -35px;
+  border: 2px solid #39b5e0;
+}
+
+.btn0 {
+  height: 40px;
+  width: 15%;
+  outline: none;
+  border: none;
+  background: #39b5e0;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+}
+.btn0:hover {
+  background-color: #4094af;
+}
+/* ...........................Home......................... */
+.main {
+  background: url(../img/pexels-anna-shvets-3683101.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: 50% 50%;
+  width: 100%;
+}
+.main h1 {
+  font-family: "Koulen", cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #282a3a;
+}
+/* .....................Tombol................ */
+.btn1 {
+  height: 45px;
+  width: 230px;
+  border: none;
+  outline: none;
+  background-color: #39b5e0;
+  color: white;
+  font-weight: 700;
+  border-radius: 60px;
+  transition: all 0.3s;
+}
+.btn1:hover {
+  background-color: #4094af;
+}
+.btn2 {
+  height: 45px;
+  width: 230px;
+  border: none;
+  outline: none;
+  background-color: #39b5e0;
+  color: white;
+  font-weight: 700;
+  border-radius: 60px;
+  transition: all 0.3s;
+}
+.btn2:hover {
+  background-color: #5bc0f8;
+}
+.btn3 {
+  height: 45px;
+  width: 230px;
+  border: none;
+  outline: none;
+  background-color: #673de6;
+  color: white;
+  font-weight: 700;
+  border-radius: 60px;
+  transition: all 0.3s;
+}
+.btn3:hover {
+  background-color: #421cb7;
+}
+.btn4 {
+  height: 45px;
+  width: 30%;
+  border: none;
+  outline: none;
+  background-color: #673de6;
+  color: white;
+  font-weight: 700;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.btn4:hover {
+  background-color: #421cb7;
+}
+h1 {
+  font-weight: 700;
+}
+
+/* ................awal kategori............ */
+a img {
+  width: 30%;
+}
+
+a img:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+.row-container {
+  margin: 0;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.judul-kategori h5 {
+  font-weight: 700;
+}
+/* .................produk................ */
+.card:hover {
+  box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s;
+}
+
+.card .btn {
+  background-color: #282a3a;
+}
+
+.card .btn:hover {
+  transition: 0.2s;
+  background-color: #39b5e0;
+}
+/* .........................footer ........... */
+.new {
+  background-color: #282a3a;
+  color: white;
+}
+.new p {
+  margin: 0;
+}
+.fa-brands {
+  font-size: 2.5rem;
+  padding-right: 5px;
+}
+
+.new .row a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 576px) {
+  .main h1 {
+    font-size: 3rem;
+  }
+  .btn1 {
+    width: 150px;
+  }
+  .btn4 {
+    width: 155px;
+  }
+
+  .navbar form {
+    margin-left: 0;
+  }
+  .navbar form {
+    width: 100%;
+  }
+}
