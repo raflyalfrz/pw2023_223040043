@@ -10,7 +10,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: whitesmoke;
+  background-image: linear-gradient(
+    to right,
+    #90e0fb,
+    #9adcf1,
+    #b4e6f5,
+    #bbe7f5,
+    #c8f1fe
+  );
 }
 
 /* css untuk bagian login */

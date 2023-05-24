@@ -25,7 +25,7 @@
     <!--........................ Navbar....................... -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="../tubes/index.php"><i class="fa-solid fa-briefcase-medical pe-2"></i>Health Pharmacy</a>
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-briefcase-medical pe-2"></i>Health Pharmacy</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,6 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./php/login.php" onclick="closeDropdownMenu()"><i class="fa-solid fa-user"></i></a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -70,12 +71,12 @@
     <section class="kategori" id="kategori">
         <div class="container mt-5 ">
             <div class="judul-kategori">
-                <h5 class="text-center">Kategori Produk</h5>
+                <h3 class="text-center">Kategori Produk</h3>
             </div>
-            <div class="row text-center justify-content-center row-container">
+            <div class="row text-center justify-content-center ">
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                     <div class="menu-kategori">
-                        <a href="#">
+                        <a href="../tubes/pages/vitamin.php">
                             <img src="../tubes/img/vitamin.png" class=" mt-4" alt="vitamin">
                         </a>
                         <p class="mt-2">Vitamin</p>
@@ -83,7 +84,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                     <div class="menu-kategori">
-                        <a href="#">
+                        <a href="../tubes/pages/obat_obatan.php">
                             <img src="../tubes/img/obat-obatan.png" class=" mt-4" alt="obat">
                         </a>
                         <p class="mt-2">Obat-obatan</p>
@@ -91,7 +92,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                     <div class="menu-kategori">
-                        <a href="#">
+                        <a href="../tubes/pages/ibu_dan_bayi.php">
                             <img src="../tubes/img/ibu dan bayi.png" class=" mt-4" alt="ibu dan bayi">
                         </a>
                         <p class="mt-2">Ibu dan Bayi</p>
@@ -99,13 +100,14 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                     <div class="menu-kategori">
-                        <a href="#">
+                        <a href="../tubes/pages/alkes.php">
                             <img src="../tubes/img/alat kesehatan.png" class=" mt-4" alt="alat kesehatan">
                         </a>
                         <p class="mt-2">Alat Kesehatan</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -114,18 +116,18 @@
         <div class="container">
             <div class="row py-5">
                 <div class="col-lg-8 m-auto text-center">
-                    <h1>Semua produk</h1>
+                    <h3>Semua produk</h3>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row">
                 <!-- ................Produk 1............... -->
                 <div class="col-lg-3 col-6 text-center">
                     <div class="card border-0 bg-light mb-2">
-                        <img src="../tubes/img/obat.jpg" class="card-img-top img-fluid" alt="detergen cair" style="object-fit: contain">
+                        <img src="../tubes/img/Aicare infrared.png" class="card-img-top img-fluid" alt="AICARE INFRARED THERMOMETER" style="object-fit: contain">
                         <div class="card-body">
-                            <h6 class="card-title">DETERGEN CAIR</h6>
-                            <p class="card-text">Rp. 20.000</p>
-                            <a href="#" class="btn btn-primary ">Lihat detail</a>
+                            <h6 class="card-title">AICARE INFRARED THERMOMETER</h6>
+                            <p class="card-text">Rp. 284.551/PC</p>
+                            <a href="../tubes/pages/CP1.php" class="btn btn-primary ">Lihat detail</a>
                         </div>
                     </div>
                 </div>
@@ -133,11 +135,11 @@
                 <!-- ................Produk 2............... -->
                 <div class="col-lg-3 col-6 text-center">
                     <div class="card border-0 bg-light mb-2">
-                        <img src="../tubes/img/obat.jpg" class="card-img-top img-fluid" alt="detergen cair" style="object-fit: contain">
+                        <img src="../tubes/img/Laica digital.png" class="card-img-top img-fluid" alt="lAICA DIGITAL THERMOMETER" style="object-fit: contain">
                         <div class="card-body">
-                            <h6 class="card-title">DETERGEN CAIR</h6>
-                            <p class="card-text">Rp. 20.000</p>
-                            <a href="#" class="btn btn-primary ">Lihat detail</a>
+                            <h6 class="card-title">LAICA DIGITAL THERMOMETER</h6>
+                            <p class="card-text">Rp. 133.200/PC</p>
+                            <a href="../tubes/pages/CP2.php" class="btn btn-primary ">Lihat detail</a>
                         </div>
                     </div>
                 </div>
@@ -145,11 +147,11 @@
                 <!-- ................Produk 3............... -->
                 <div class="col-lg-3 col-6 text-center">
                     <div class="card border-0 bg-light mb-2">
-                        <img src="../tubes/img/obat.jpg" class="card-img-top img-fluid" alt="detergen cair" style="object-fit: contain">
+                        <img src="../tubes/img/Tempra drops.png" class="card-img-top img-fluid" alt="TEMPRA DROPS 15 ML/OBAT DEMAM NYERI ANAK & BAYI" style="object-fit: contain">
                         <div class="card-body">
-                            <h6 class="card-title">DETERGEN CAIR</h6>
-                            <p class="card-text">Rp. 20.000</p>
-                            <a href="#" class="btn btn-primary ">Lihat detail</a>
+                            <h6 class="card-title">TEMPRA DROPS 15ML</h6>
+                            <p class="card-text">Rp. 50.350/BOTOL</p>
+                            <a href="../tubes/pages/CP3.php" class="btn btn-primary ">Lihat detail</a>
                         </div>
                     </div>
                 </div>
@@ -157,16 +159,67 @@
                 <!-- ................Produk 4............... -->
                 <div class="col-lg-3 col-6 text-center">
                     <div class="card border-0 bg-light mb-2">
-                        <img src="../tubes/img/obat.jpg" class="card-img-top img-fluid" alt="detergen cair" style="object-fit: contain">
+                        <img src="../tubes/img/Entrostop.png" class="card-img-top img-fluid" alt="ENTROSTOP HERBAL ANAK 6 SACHET" style="object-fit: contain">
                         <div class="card-body">
-                            <h6 class="card-title">DETERGEN CAIR</h6>
-                            <p class="card-text">Rp. 20.000</p>
-                            <a href="#" class="btn btn-primary ">Lihat detail</a>
+                            <h6 class="card-title">ENTROSTOP HERBAL ANAK</h6>
+                            <p class="card-text">Rp. 15.120/DUS</p>
+                            <a href="../tubes/pages/CP4.php" class="btn btn-primary ">Lihat detail</a>
                         </div>
                     </div>
                 </div>
 
             </div>
+            <div class="row ">
+                <!-- ................Produk 5............... -->
+                <div class="col-lg-3 col-6 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <img src="../tubes/img/Cdr .png" class="card-img-top img-fluid" alt="CDR 15 TABLET EFFERVESCENT/ SUPLEMEN KESEHATAN TULANG & SENDI" style="object-fit: contain">
+                        <div class="card-body">
+                            <h6 class="card-title">CDR 15 TABLET EFFERVESCENT</h6>
+                            <p class="card-text">Rp. 65.819/TUBE</p>
+                            <a href="../tubes/pages/CP5.php" class="btn btn-primary ">Lihat detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ................Produk 6............... -->
+                <div class="col-lg-3 col-6 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <img src="../tubes/img/Sakatonik.png" class="card-img-top img-fluid" alt="SAKATONIK LIVER SIRUP" style="object-fit: contain">
+                        <div class="card-body">
+                            <h6 class="card-title">SAKATONIK LIVER SIRUP</h6>
+                            <p class="card-text">Rp. 12.851/BOTOL</p>
+                            <a href="../tubes/pages/CP6.php" class="btn btn-primary ">Lihat detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ................Produk 7............... -->
+                <div class="col-lg-3 col-6 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <img src="../tubes/img/Minyak telon.jpg" class="card-img-top img-fluid" alt="My Baby Minyak Telon 150 ml" style="object-fit: contain">
+                        <div class="card-body">
+                            <h6 class="card-title">MY BABY MINYAK TELON</h6>
+                            <p class="card-text">Rp. 36.300/BOTOL</p>
+                            <a href="../tubes/pages/CP7.php" class="btn btn-primary ">Lihat detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ................Produk 8............... -->
+                <div class="col-lg-3 col-6 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <img src="../tubes/img/Vitaflow botol susu.png" class="card-img-top img-fluid" alt="VITAFLOW BOTOL SUSU MULTIFUNGSI PP 140 ML - DOT SIZE S" style="object-fit: contain">
+                        <div class="card-body">
+                            <h6 class="card-title">VITAFLOW BOTOL SUSU</h6>
+                            <p class="card-text">Rp. 34.000</p>
+                            <a href="../tubes/pages/CP8.php" class="btn btn-primary ">Lihat detail</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
 
         </div>

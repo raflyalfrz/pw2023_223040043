@@ -20,13 +20,13 @@
                 <i class="fa-solid fa-briefcase-medical me-2"></i>Health Pharmacy
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <a href="../pages/dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active">
                     <i class="fa-solid fa-box me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <a href="../pages/customers.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                     <i class="fa-solid fa-user me-2"></i>Customers</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <a href="../pages/product.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                     <i class="fa-solid fa-box me-2"></i>Product</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                <a href="../php/admin.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
                     <i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
             </div>
         </div>
@@ -37,44 +37,66 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Login</h2>
+                    <h2 class="fs-2 m-0">Dashboard</h2>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>Rafly Alfarizi
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div class="login">
-                                <form class="needs-validation">
-                                    <div class="form-group was-validated">
-                                        <label class="form-label" for="username">Username</label>
-                                        <input class="form-control" type="text" id="Username" required>
-                                        <div class="invalid-feedback">
-                                            Silahkan masukkan username anda
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group was-validated">
-                                        <label class="form-label" for="password">Password</label>
-                                        <input class="form-control" type="password" id="password" required>
-                                        <div class="invalid-feedback">
-                                            Silahkan masukkan password anda
-                                        </div>
-                                    </div>
-
-                                    <button class="btn w-100">
-                                        <a class="nav-link" href="../pages/dashboard.php">Login</a>
-                                    </button>
-                                    <p class="py-3">Belum mempunyai akun? <a href="../php/register.php">daftar</a></p>
-                                </form>
-
+                            <div>
+                                <h3 class="fs-2">8</h3>
+                                <p class="fs-5">Products</p>
                             </div>
+                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">0</h3>
+                                <p class="fs-5">Customers</p>
+                            </div>
+                            <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row my-5">
+                    <h3 class="fs-4 mb-3">Recent Orders</h3>
+                    <div class="col">
+                        <table class="table bg-white rounded shadow-sm  table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col" width="50">#</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Customer</th>
+                                </tr>
+                            </thead>
+
+                        </table>
                     </div>
                 </div>
 
