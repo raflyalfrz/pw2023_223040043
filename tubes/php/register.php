@@ -1,58 +1,81 @@
+<?php
+require 'functions.php';
+$conn = koneksi();
+if (isset($_POST["register"])) {
+
+    if (registrasi($_POST) > 0) {
+        echo "<script>
+				alert('user baru berhasil ditambahkan!');
+                document.location.href = 'login.php';
+			  </script>";
+    } else {
+        echo mysqli_error($conn);
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Health Pharmacy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/logreg.css" />
 
-    <link rel="stylesheet" href="../css/logreg.css">
-
+    <!-- .....................Link font....................... -->
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+
+    <!-- ......................Link Icon...................... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
-    <section>
-        <div class="daftar">
-            <h1>Daftar</h1>
 
-            <form class="needs-validation">
-                <div class="form-group was-validated">
-                    <label class="form-label" for="username">Username</label>
-                    <input class="form-control" type="text" id="Username" required>
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 right">
+                    <div class="input-box">
+                        <header>Buat account</header>
+                        <form action="" method="post">
+                            <div class="input-field">
+                                <input type="text" class="input" id="username" name="username" required autocomplete="off">
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="password" name="password" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="password2" name="password2" required>
+                                <label for="password2">Konfirmasi Password</label>
+                            </div>
+                            <div class="input-field">
+                                <button type="submit" class="submit" name="register">Sign Up</button>
+                            </div>
+                        </form>
+                        <div class="signin">
+                            <span>Sudah mempunyai akun? <a href="../php/login.php">Login disini</a></span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-group was-validated">
-                    <label class="form-label" for="password">Password</label>
-                    <input class="form-control" type="password" id="password" required>
+                <div class="col-md-6 side-image">
+                    <!-------Image-------->
                 </div>
-
-                <div class="form-group was-validated">
-                    <label class="form-label" for="password">Konfirmasi Password</label>
-                    <input class="form-control" type="password" id="password" required>
-                </div>
-
-                <button class="btn w-100">
-                    <a class="nav-link" href="../php/login.php">Daftar</a>
-                </button>
-                <p class="py-3">Sudah punyai akun? <a href="../php/login.php">klik disini</a> untuk login</p>
-            </form>
-
+            </div>
         </div>
-    </section>
+    </div>
 
 
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="../tubes/js/main.js"></script>
 </body>
 
 </html>

@@ -57,11 +57,11 @@ if (isset($_POST["login"])) {
                 <div class="col-md-6 right">
                     <div class="input-box">
                         <div class="button-group">
-                            <button type="submit" class="btn1" name="admin"><a class="nav-link" href="login.admin.php">Admin</a></button>
-                            <button type="submit" class="btn12" name="user">User</button>
+                            <button type="submit" class="btn12" name="admin">Admin</button>
+                            <button type="submit" class="btn1" name="user"><a class="nav-link" href="login.php">User</a></button>
                         </div>
                         <br>
-                        <header>Login account user</header>
+                        <header>Login account admin</header>
                         <?php if (isset($error)) : ?>
                             <p style="color: red; font-style: italic;">username / password salah</p>
                         <?php endif; ?>
