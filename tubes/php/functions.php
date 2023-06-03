@@ -22,11 +22,13 @@ function query($query)
 }
 
 
+//untuk menambah data
 function tambah($data)
 {
     $conn = koneksi();
     $nama_produk = htmlspecialchars($data['nama_produk']);
     $harga = htmlspecialchars($data['harga']);
+    $Kategori_produk = htmlspecialchars($data['Kategori_produk']);
     $dosis_produk = htmlspecialchars($data['dosis_produk']);
     $deskripsi_produk = htmlspecialchars($data['deskripsi_produk']);
 
@@ -36,7 +38,7 @@ function tambah($data)
         return false;
     }
 
-    $query = "INSERT INTO produk VALUES(null, '$nama_produk', '$harga', '$dosis_produk', '$deskripsi_produk', '$gambar')";
+    $query = "INSERT INTO produk VALUES(null, '$nama_produk', '$harga', '$Kategori_produk', '$dosis_produk', '$deskripsi_produk', '$gambar')";
 
     mysqli_query($conn, $query) or die(mysqli_error($conn));
 
@@ -44,6 +46,7 @@ function tambah($data)
 }
 
 
+// untuk upload gambar
 function upload()
 {
     $namaFile = $_FILES['gambar']['name'];
@@ -82,7 +85,7 @@ function upload()
     $namaFileBaru = uniqid() . '.' . $ekstensiGambar;
 
     // set path absolut untuk folder tujuan penyimpanan gambar
-    $pathTujuan = $_SERVER['DOCUMENT_ROOT'] . '/pw2023_223040043/contoh/img/' . $namaFileBaru;
+    $pathTujuan = $_SERVER['DOCUMENT_ROOT'] . '/pw2023_223040043/tubes/img/' . $namaFileBaru;
 
     // pindahkan file ke folder tujuan
     if (!move_uploaded_file($tmpName, $pathTujuan)) {
@@ -96,44 +99,53 @@ function upload()
 }
 
 
-
+//untuk hapus data
 function hapus($id)
 {
     $conn = koneksi();
     $query = "DELETE FROM produk WHERE id = $id";
-
     mysqli_query($conn, $query) or die(mysqli_error($conn));
 
     return mysqli_affected_rows($conn);
 }
 
 
+//untuk merubah data
 function ubah($data)
 {
     $conn = koneksi();
     $id = $data['id'];
     $nama_produk = htmlspecialchars($data['nama_produk']);
     $harga = htmlspecialchars($data['harga']);
+    $kategori_produk = htmlspecialchars($data['Kategori_produk']);
     $dosis_produk = htmlspecialchars($data['dosis_produk']);
     $deskripsi_produk = htmlspecialchars($data['deskripsi_produk']);
-    $gambar = htmlspecialchars($data['gambar']);
+    $gambarLama = htmlspecialchars($data['gambarLama']);
 
+    // cek apakah user pilih gambar baru atau tidak
+    if ($_FILES['gambar']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = upload();
+    }
 
-    $query = "UPDATE FROM produk 
-            SET
-            nama_produk = '$nama_produk',
-            harga = '$harga',
-            dosis_produk = '$dosis_produk',
-            deskripsi_produk = '$deskripsi_produk',
-            gambar = 'gambar'
-            WHERE id = $id";
+    $query = "UPDATE produk SET
+                nama_produk = ?,
+                harga = ?,
+                Kategori_produk = ?,
+                dosis_produk = ?,
+                deskripsi_produk = ?,
+                gambar = ?
+              WHERE id = ?";
 
-    mysqli_query($conn, $query) or die(mysqli_error($conn));
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "sissssi", $nama_produk, $harga, $kategori_produk, $dosis_produk, $deskripsi_produk, $gambar, $id);
+    mysqli_stmt_execute($stmt);
 
-    return mysqli_affected_rows($conn);
+    return mysqli_stmt_affected_rows($stmt);
 }
 
-
+//untuk seacrh
 function cari($keyword)
 {
     $query = "SELECT * FROM produk
@@ -144,10 +156,11 @@ function cari($keyword)
     return query($query);
 }
 
+
+//untuk registrasi akun
 function registrasi($data)
 {
     global $conn;
-
     $username = strtolower(stripslashes($data["username"]));
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
@@ -161,7 +174,6 @@ function registrasi($data)
 		      </script>";
         return false;
     }
-
 
     // cek konfirmasi password
     if ($password !== $password2) {
@@ -179,6 +191,48 @@ function registrasi($data)
 
     return mysqli_affected_rows($conn);
 }
+
+
+//untuk login
+function login($username, $password)
+{
+    $conn = koneksi();
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    // cek username
+    if (mysqli_num_rows($result) === 1) {
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])) {
+            // set session
+            $_SESSION["login"] = true;
+            $_SESSION["username"] = $row['username'];
+            // cek remember me
+            if (isset($_POST['remember'])) {
+                // buat cookie
+                setcookie('id', $row['id'], time() + 86400);
+                setcookie('key', hash('sha256', $row['username']), time() + 86400);
+            }
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function isUserLoggedIn()
+{
+    if (isset($_SESSION["login"])) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
 
 function dd($value)
 {

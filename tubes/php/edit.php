@@ -1,16 +1,36 @@
 <?php
-require('functions.php');
-require('partials/header.admin.php');
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("location:login.admin.php");
+}
+require 'functions.php';
+require 'partials/header.admin.php';
 
-$id = htmlspecialchars($_GET['id']);
+// ambil data di URL
+$id = $_GET["id"];
+
+// query data mahasiswa berdasarkan id
 $brg = query("SELECT * FROM produk WHERE id = $id")[0];
 
-if (isset($_POST['edit'])) {
+
+// cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+
+    // cek apakah data berhasil diubah atau tidak
     if (ubah($_POST) > 0) {
-        echo "<script>
-        alert('Data berhasil dirubah!');
-        document.location.href = 'produk.php';
-        </script>";
+        echo "
+			<script>
+				alert('data berhasil diubah!');
+				document.location.href = 'produk.php';
+			</script>
+		";
+    } else {
+        echo "
+			<script>
+				alert('data gagal diubah!');
+				document.location.href = 'produk.php';
+			</script>
+		";
     }
 }
 ?>
@@ -29,8 +49,7 @@ if (isset($_POST['edit'])) {
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-store me-2"></i>Store</a>
-            <a href="../php/admin.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                <i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
+            <?php require('partials/tbl_logout_admin.php') ?>
         </div>
     </div>
     <div id="page-content-wrapper">
@@ -58,7 +77,9 @@ if (isset($_POST['edit'])) {
                 </div>
 
                 <div class="container d-flex justify-content-center">
-                    <form action="" method="post" style="width:50vw; min-width:300px;">
+                    <form action="" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+                        <input type="hidden" name="id" value="<?= $brg["id"]; ?>">
+                        <input type="hidden" name="gambarLama" value="<?= $brg["gambar"]; ?>">
                         <div class="mb-3">
                             <label class="form-label">Nama Produk:</label>
                             <input type="text" class="form-control" name="nama_produk" id="nama_produk" required value="<?= $brg['nama_produk']; ?>" autocomplete="off">
@@ -66,6 +87,16 @@ if (isset($_POST['edit'])) {
                         <div class="mb-3">
                             <label class="form-label">Harga:</label>
                             <input type="number" class="form-control" name="harga" id="harga" required value="<?= $brg['harga']; ?>" autocomplete="off">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kategori:</label>
+                            <select class="form-select" name="Kategori_produk" id="Kategori_produk" required>
+                                <option value="" selected disabled>Pilih kategori</option>
+                                <option value="obat" <?php if ($brg['Kategori_produk'] == 'obat') echo 'selected'; ?>>Obat</option>
+                                <option value="vitamin" <?php if ($brg['Kategori_produk'] == 'vitamin') echo 'selected'; ?>>Vitamin</option>
+                                <option value="alat kesehatan" <?php if ($brg['Kategori_produk'] == 'alat kesehatan') echo 'selected'; ?>>Alat Kesehatan</option>
+                                <option value="ibu dan bayi" <?php if ($brg['Kategori_produk'] == 'ibu dan bayi') echo 'selected'; ?>>Ibu dan Bayi</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Dosis:</label>
@@ -76,11 +107,12 @@ if (isset($_POST['edit'])) {
                             <textarea class="form-control" name="deskripsi_produk" rows="3" id="deskripsi_produk" autocomplete="off" required><?= $brg['deskripsi_produk']; ?></textarea>
                         </div>
                         <div class="mb-3">
-                            <input type="file" class="form-control" name="gambar" id="gambar" required value="<?= $brg['gambar']; ?>">
+                            <img src="../img/<?php echo $brg['gambar']; ?>" width="50"> <br>
+                            <input type="file" class="form-control" name="gambar" id="gambar">
                         </div>
 
                         <div>
-                            <button type="submit" class="btn btn-success" name="edit">Edit</button>
+                            <button type="submit" class="btn btn-success" name="submit">Edit</button>
                             <a href="../php/produk.php" class="btn btn-danger">Cancel</a>
                         </div>
                     </form>

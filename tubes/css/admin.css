@@ -79,36 +79,9 @@
   border: none;
 }
 
-.login {
-  width: 360px;
-  height: min-content;
-  padding: 20px;
-  border-radius: 12px;
-  background: white;
-}
-
-.login h1 {
-  font-size: 36px;
-  margin-bottom: 25px;
-  font-weight: bold;
-}
-
-.login form {
-  font-size: 20px;
-}
-
-.login form .form-group {
-  margin-bottom: 12px;
-}
-
-.login form .btn {
-  font-size: 20px;
-  height: 40px;
-  border-radius: 15px;
-  margin-top: 15px;
-  background-color: black;
-  color: white;
-  padding: 0;
+.input-group input[type="text"]:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {

@@ -1,7 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("location:login.admin.php");
+}
 require('functions.php');
 require('partials/header.admin.php');
-$brgs = query("SELECT *  FROM produk")
+$brgs = query("SELECT *  FROM produk");
+$pgns = query("SELECT *  FROM user")
 
 ?>
 
@@ -19,8 +24,7 @@ $brgs = query("SELECT *  FROM produk")
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-store me-2"></i>Store</a>
-            <a href="../php/admin.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                <i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
+            <?php require('partials/tbl_logout_admin.php') ?>
         </div>
     </div>
     <div id="page-content-wrapper">
@@ -41,35 +45,7 @@ $brgs = query("SELECT *  FROM produk")
             </div>
         </nav>
 
-        <div class="container-fluid px-4">
-            <div class="container">
-                <table class="table bg-white rounded shadow-sm  table-hover table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i = 0;
-                        foreach ($brgs as $brg) :
-                            $i++ ?>
-                            <tr>
-                                <th scope="row"><?= $i ?></th>
-                                <td><?php echo $brg['nama_produk'] ?></td>
-                                <td>Rp.<?php echo $brg['harga'] ?></td>
-                                <td>
-                                    <a href="../php/edit.php?id=<?php echo $brg['id'] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3 text-success"></i></a>
-                                    <a href="../php/hapus.php?id=<?php echo $brg['id'] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5 text-danger" onclick="return confirm('Anda yakin ingin menghapus data ini?')"></i></a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
     </div>
 
     <?php require('partials/footer.admin.php') ?>

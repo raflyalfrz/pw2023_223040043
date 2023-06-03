@@ -1,6 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("location:login.admin.php");
+}
 require('functions.php');
 require('partials/header.admin.php');
+
 
 if (isset($_POST['tambah'])) {
 
@@ -27,8 +32,7 @@ if (isset($_POST['tambah'])) {
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-store me-2"></i>Store</a>
-            <a href="../php/admin.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                <i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
+            <?php require('partials/tbl_logout_admin.php') ?>
         </div>
     </div>
     <div id="page-content-wrapper">
@@ -66,12 +70,23 @@ if (isset($_POST['tambah'])) {
                             <input type="number" class="form-control" name="harga" id="harga" placeholder="masukan jumlah harga" pattern="[\d.]+" title="Hanya boleh angka dan titik(.)" autocomplete="off" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Kategori:</label>
+                            <select class="form-select" name="Kategori_produk" id="Kategori_produk" required>
+                                <option value="" selected disabled>Pilih kategori</option>
+                                <option value="obat">Obat</option>
+                                <option value="vitamin">Vitamin</option>
+                                <option value="alat kesehatan">Alat Kesehatan</option>
+                                <option value="ibu_bayi">Ibu dan Bayi</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
                             <label class="form-label">Dosis:</label>
-                            <input type="text" class="form-control" name="dosis_produk" id="dosis_produk" placeholder="masukan dosis" autocomplete="off" required>
+                            <textarea type="text" class="form-control" name="dosis_produk" id="dosis_produk" rows="2" placeholder="masukan dosis" autocomplete="off" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Deskripsi:</label>
-                            <textarea class="form-control" name="deskripsi_produk" rows="3" id="deskripsi_produk" placeholder="masukan deskrpsi" autocomplete="off" required></textarea>
+                            <textarea class="form-control" name="deskripsi_produk" rows="2" id="deskripsi_produk" placeholder="masukan deskrpsi" autocomplete="off" required></textarea>
                         </div>
                         <div class="mb-3">
                             <input type="file" class="form-control" name="gambar" id="gambar" required>

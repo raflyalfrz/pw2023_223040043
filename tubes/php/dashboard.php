@@ -1,8 +1,18 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("location:login.admin.php");
+}
 require('functions.php');
 require('partials/header.admin.php');
-$brgs = query("SELECT *  FROM produk")
-
+$brgs = query("SELECT *  FROM produk");
+$pgns = query("SELECT *  FROM user");
+// untuk menghitung jumlah data produk yang ada
+$get1 = query("SELECT * FROM produk");
+$count1 = count($get1);
+// untuk menghitung data user yang ada
+$get2 = query("SELECT * FROM user");
+$count2 = count($get2)
 ?>
 
 <div class="d-flex" id="wrapper">
@@ -19,8 +29,7 @@ $brgs = query("SELECT *  FROM produk")
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-store me-2"></i>Store</a>
-            <a href="../php/admin.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                <i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a>
+            <?php require('partials/tbl_logout_admin.php') ?>
         </div>
     </div>
     <div id="page-content-wrapper">
@@ -46,53 +55,25 @@ $brgs = query("SELECT *  FROM produk")
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
-                            <h3 class="fs-2">0</h3>
-                            <p class="fs-5">Products</p>
+                            <h3 class="fs-2"><?= $count2 ?></h3>
+                            <p class="fs-5">User</p>
                         </div>
-                        <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
-                            <h3 class="fs-2">0</h3>
-                            <p class="fs-5">User</p>
+                            <h3 class="fs-2"><?= $count1 ?></h3>
+                            <p class="fs-5">Produk</p>
                         </div>
-                        <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        <i class="fas fa-box fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                     </div>
                 </div>
             </div>
 
-            <div class="container my-5">
-                <h3 class="fs-4 mb-3">User</h3>
 
-                <table class="table bg-white rounded shadow-sm  table-hover table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Jenis kelamin</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i = 0;
-                        foreach ($brgs as $brg) :
-                            $i++ ?>
-                            <tr>
-                                <th scope="row"><?= $i ?></th>
-                                <td><?php echo $brg['nama_produk'] ?></td>
-                                <td>Rp.<?php echo $brg['harga'] ?></td>
-                                <td>
-                                    <a href="../php/edit.php?id=<?php echo $brg['id'] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3 text-success"></i></a>
-                                    <a href="../php/hapus.php?id=<?php echo $brg['id'] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5 text-danger" onclick="return confirm('Anda yakin ingin menghapus data ini?')"></i></a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
 
             <div class="container my-5">
                 <h3 class="fs-4 mb-3">Produk</h3>
@@ -106,7 +87,7 @@ $brgs = query("SELECT *  FROM produk")
                             <th scope="col">Dosis</th>
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Gambar</th>
-                            <th scope="col">Aksi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -119,11 +100,8 @@ $brgs = query("SELECT *  FROM produk")
                                 <td>Rp.<?php echo $brg['harga'] ?></td>
                                 <td><?php echo $brg['dosis_produk'] ?></td>
                                 <td><?php echo $brg['deskripsi_produk'] ?></td>
-                                <td><img src="../img/Sakatonik.png" width="50"></td>
-                                <td>
-                                    <a href="../php/edit.php?id=<?php echo $brg['id'] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3 text-success"></i></a>
-                                    <a href="../php/hapus.php?id=<?php echo $brg['id'] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5 text-danger" onclick="return confirm('Anda yakin ingin menghapus data ini?')"></i></a>
-                                </td>
+                                <td><img src="../img/<?php echo $brg['gambar']; ?>" width="50"></td>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

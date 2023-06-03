@@ -19,6 +19,7 @@
   font-family: "ABeeZee", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: small;
 }
 .nav-item a:hover {
   color: #39b5e0;

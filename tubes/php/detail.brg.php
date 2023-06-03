@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("location:login.php");
+}
 require('functions.php');
 
 // Mendapatkan ID produk dari parameter URL
@@ -37,6 +41,11 @@ if (isset($_GET['id'])) {
                                     <tr>
                                         <th>Dosis</th>
                                         <td>:</td>
+                                        <td><?php echo $brg[0]['Kategori_produk'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dosis</th>
+                                        <td>:</td>
                                         <td><?php echo $brg[0]['dosis_produk'] ?></td>
                                     </tr>
                                     <tr>
@@ -44,8 +53,14 @@ if (isset($_GET['id'])) {
                                         <td>:</td>
                                         <td><?php echo $brg[0]['deskripsi_produk'] ?></td>
                                     </tr>
+                                    <tr>
+                                        <button class="btn1 mt-3">
+                                            <a class="nav-link" href="#produk">Lihat Produk</a>
+                                        </button>
+                                    </tr>
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>
