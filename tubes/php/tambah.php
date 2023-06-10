@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
+if (!isset($_SESSION["login1"])) {
     header("location:login.admin.php");
 }
 require('functions.php');
@@ -26,8 +26,6 @@ if (isset($_POST['tambah'])) {
         <div class="list-group list-group-flush my-3">
             <a href="../php/dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-box me-2"></i>Dashboard</a>
-            <a href="../php/user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fa-solid fa-user me-2"></i>User</a>
             <a href="../php/produk.php" class="list-group-item list-group-item-action bg-transparent second-text active">
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">

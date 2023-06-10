@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
+if (!isset($_SESSION["login1"])) {
     header("location:login.admin.php");
 }
 require('functions.php');
@@ -26,8 +26,6 @@ if (isset($_POST["cari"])) {
         <div class="list-group list-group-flush my-3">
             <a href="../php/dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-box me-2"></i>Dashboard</a>
-            <a href="../php/user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fa-solid fa-user me-2"></i>User</a>
             <a href="../php/produk.php" class="list-group-item list-group-item-action bg-transparent second-text active">
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
@@ -56,7 +54,6 @@ if (isset($_POST["cari"])) {
         <div class="container-fluid px-4">
             <div class="container">
                 <a href="../php/tambah.php" class="btn bg-white mb-3">Tambah</a>
-                <a href="../php/tambah.php" class="btn bg-white mb-3">Stock</a>
                 <a href="../php/cetak.php" target="_blank" class="btn bg-danger mb-3 text-white"><i class="fa-solid fa-print me-2"></i>Print</a>
                 <br>
                 <br>
@@ -76,7 +73,6 @@ if (isset($_POST["cari"])) {
                                 <th scope="col">Nama</th>
                                 <th scope="col">Harga</th>
                                 <th scope="col">Kategori</th>
-                                <th scope="col">Stock</th>
                                 <th scope="col">Gambar</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -90,7 +86,6 @@ if (isset($_POST["cari"])) {
                                     <td><?php echo $brg['nama_produk'] ?></td>
                                     <td>Rp.<?php echo $brg['harga'] ?></td>
                                     <td><?php echo $brg['Kategori_produk'] ?></td>
-                                    <td></td>
                                     <td><img src="../img/<?php echo $brg['gambar']; ?>" width="50"></td>
 
                                     <td>

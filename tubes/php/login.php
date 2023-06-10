@@ -46,12 +46,8 @@ if (isset($_POST["login"])) {
 
                 <div class="col-md-6 right">
                     <div class="input-box">
-                        <div class="button-group">
-                            <button type="submit" class="btn1" name="admin"><a class="nav-link" href="login.admin.php">Admin</a></button>
-                            <button type="submit" class="btn12" name="user">User</button>
-                        </div>
-                        <br>
-                        <header>Login account user</header>
+
+                        <header>Login account</header>
                         <?php if (isset($error)) : ?>
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 <strong>salah!</strong> pastikan password dan username sudah sesuai.

@@ -50,4 +50,4 @@ require('partials/nav.php');
     </div>
 </section>
 
-<?php require('partials/foote.php') ?>
+<?php require('partials/footer.php') ?>

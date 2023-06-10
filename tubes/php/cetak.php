@@ -23,7 +23,6 @@ $html = '<!DOCTYPE html>
             <th>Nama</th>
             <th>Harga</th>
             <th>Kategori</th>
-            <th>Stock</th>
         </tr>';
 
 $i = 1;

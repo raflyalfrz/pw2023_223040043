@@ -16,7 +16,6 @@ $brgs = query($query);
                 <th scope="col">Nama</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Kategori</th>
-                <th scope="col">Stock</th>
                 <th scope="col">Gambar</th>
                 <th scope="col">Aksi</th>
             </tr>
@@ -30,7 +29,6 @@ $brgs = query($query);
                     <td><?php echo $brg['nama_produk'] ?></td>
                     <td>Rp.<?php echo $brg['harga'] ?></td>
                     <td><?php echo $brg['Kategori_produk'] ?></td>
-                    <td></td>
                     <td><img src="../img/<?php echo $brg['gambar']; ?>" width="50"></td>
 
                     <td>

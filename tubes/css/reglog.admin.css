@@ -7,7 +7,6 @@
 }
 
 .wrapper {
-  background-image: linear-gradient(to right, #bbe7f5, #c8f1fe);
   padding: 0 20px 0 20px;
 }
 header {
@@ -20,25 +19,18 @@ header {
   min-height: 100vh;
 }
 .row {
-  width: 900px;
-  height: 550px;
+  width: 400px;
+  height: 400px;
   border-radius: 10px;
   background: #fff;
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
-.side-image {
-  background-image: url("../img/pexels-anna-shvets-3683101.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 10px 0 0 10px;
-}
-img {
-  width: 35px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
+.row1 {
+  width: 400px;
+  height: 650px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
 .text {
   position: absolute;

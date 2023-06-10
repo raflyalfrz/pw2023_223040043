@@ -1,18 +1,22 @@
 <?php
 session_start();
-if (!isset($_SESSION["login"])) {
+if (!isset($_SESSION["login1"])) {
     header("location:login.admin.php");
 }
 require('functions.php');
 require('partials/header.admin.php');
 $brgs = query("SELECT *  FROM produk");
 $pgns = query("SELECT *  FROM user");
+$adms = query("SELECT *  FROM customer");
 // untuk menghitung jumlah data produk yang ada
 $get1 = query("SELECT * FROM produk");
 $count1 = count($get1);
 // untuk menghitung data user yang ada
 $get2 = query("SELECT * FROM user");
-$count2 = count($get2)
+$count2 = count($get2);
+// untuk menghitung data Admin yang ada
+$get3 = query("SELECT * FROM customer");
+$count3 = count($get3)
 ?>
 
 <div class="d-flex" id="wrapper">
@@ -23,8 +27,6 @@ $count2 = count($get2)
         <div class="list-group list-group-flush my-3">
             <a href="../php/dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active">
                 <i class="fa-solid fa-box me-2"></i>Dashboard</a>
-            <a href="../php/user.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fa-solid fa-user me-2"></i>User</a>
             <a href="../php/produk.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fa-solid fa-box me-2"></i>Product</a>
             <a href="../index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
@@ -65,6 +67,16 @@ $count2 = count($get2)
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
+                            <h3 class="fs-2"><?= $count3 ?></h3>
+                            <p class="fs-5">Admin</p>
+                        </div>
+                        <i class="fas fa-user-gear fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
                             <h3 class="fs-2"><?= $count1 ?></h3>
                             <p class="fs-5">Produk</p>
                         </div>
@@ -73,39 +85,56 @@ $count2 = count($get2)
                 </div>
             </div>
 
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>User</h4>
+                        <table class="table bg-white rounded shadow-sm  table-hover table-striped ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 0;
+                                foreach ($pgns as $pgn) :
+                                    $i++ ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?php echo $pgn['username'] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h4>Admin</h4>
+                        <table class="table bg-white rounded shadow-sm  table-hover table-striped ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 0;
+                                foreach ($adms as $adm) :
+                                    $i++ ?>
+                                    <tr>
+                                        <th scope="row"><?= $i ?></th>
+                                        <td><?php echo $adm['nama'] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+
+                    </div>
 
 
-            <div class="container my-5">
-                <h3 class="fs-4 mb-3">Produk</h3>
+                </div>
 
-                <table class="table bg-white rounded shadow-sm  table-hover table-striped ">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col">Dosis</th>
-                            <th scope="col">Deskripsi</th>
-                            <th scope="col">Gambar</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i = 0;
-                        foreach ($brgs as $brg) :
-                            $i++ ?>
-                            <tr>
-                                <th scope="row"><?= $i ?></th>
-                                <td><?php echo $brg['nama_produk'] ?></td>
-                                <td>Rp.<?php echo $brg['harga'] ?></td>
-                                <td><?php echo $brg['dosis_produk'] ?></td>
-                                <td><?php echo $brg['deskripsi_produk'] ?></td>
-                                <td><img src="../img/<?php echo $brg['gambar']; ?>" width="50"></td>
-
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>

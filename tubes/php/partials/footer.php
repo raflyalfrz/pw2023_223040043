@@ -10,16 +10,16 @@
             <div class="col-lg-3 py-4">
                 <h5 class="pb-3">MENU</h5>
                 <div>
-                    <a href="#beranda" class="d-block text-white text-decoration-none">Home</a>
-                    <a href="#produk" class="d-block mt-2 text-white text-decoration-none">Produk</a>
-                    <a href="php/login.admin.php" class="d-block mt-2 text-white text-decoration-none">Produk</a>
+                    <a href="../index.php#toko" class="d-block text-white text-decoration-none">Toko</a>
+                    <a href="../index.php#produk" class="d-block mt-2 text-white text-decoration-none">Produk</a>
+                    <a href="../index.php#kontak" class="d-block mt-2 text-white text-decoration-none">Kontak</a>
                 </div>
             </div>
             <div class="col-lg-2 py-4">
                 <h5 class="pb-3">MEDIA SOSIAL</h5>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-telegram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook text-light"></i></a>
+                <a href=""><i class="fa-brands fa-square-instagram text-light"></i></a>
+                <a href="https://github.com/raflyalfrz"><i class="fa-brands fa-github text-light"></i></a>
             </div>
             <div class="col-lg-4 py-4">
                 <h5 class="pb-3">INFO KONTAK</h5>
@@ -40,7 +40,7 @@
 <!-- .....................Link script JS....................... -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-<script src="js/main2.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
