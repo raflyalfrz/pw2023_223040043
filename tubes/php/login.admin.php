@@ -77,11 +77,11 @@ if (isset($_POST["login1"])) {
                 </div>
             </nav>
 
-            <div class="container main">
+            <div class="container-fluid py-4 px-4">
                 <div class="row">
                     <div class="col-md-12 right">
                         <div class="input-box">
-                            <header>Login accout</header>
+                            <header>Login account</header>
                             <?php if (isset($error)) : ?>
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <strong>salah!</strong> pastikan password dan username sudah sesuai.
@@ -98,7 +98,7 @@ if (isset($_POST["login1"])) {
                                     <label for="password">Password</label>
                                 </div>
                                 <div class="input-field">
-                                    <button type="submit" class="submit" name="login1">Sign Up</button>
+                                    <button type="submit" class="submit" name="login1">Sign In</button>
                                 </div>
                             </form>
                             <div class="signin">
@@ -106,7 +106,6 @@ if (isset($_POST["login1"])) {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

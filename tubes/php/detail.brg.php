@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
                                     </div>
 
                                     <div class="form-group mt-3">
-                                        <button type="button" class="btn btn-dark mt-2" onclick="addToCart()">Tambah ke Keranjang</button>
+                                        <button type="submit" class="btn btn-dark mt-2" onclick="noacces(event)">Tambah ke Keranjang</button>
                                         <button type="button" class="btn btn-danger mt-2"><a class="nav-link" href="../index.php#produk">Kembali</a></button>
                                         <input type="hidden" name="item_name" value="<?= $brg[0]['nama_produk']; ?>">
                                         <input type="hidden" name="item_harga" value="<?php echo $brg[0]['harga'] ?>">

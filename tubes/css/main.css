@@ -268,4 +268,47 @@ h5 {
   a img {
     width: 55%;
   }
+  .menu-kategori p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .main h1 {
+    font-size: 3rem;
+  }
+  .btn5 {
+    width: 80px;
+    height: 30px;
+    font-size: 9px;
+  }
+  .btn6 {
+    width: 30px;
+    height: 30px;
+  }
+  .fa-cart-shopping {
+    width: 5px;
+    margin-right: 50px;
+  }
+  .btn1 {
+    width: 150px;
+  }
+  .btn4 {
+    width: 155px;
+  }
+  .apple h1 {
+    font-size: 40px;
+  }
+  .apple h6 {
+    font-size: 18px;
+  }
+  .card-img-top {
+    height: 150px;
+  }
+  a img {
+    width: 55%;
+  }
+  .menu-kategori p {
+    font-size: 10px;
+  }
 }

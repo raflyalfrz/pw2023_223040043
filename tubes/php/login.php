@@ -5,7 +5,7 @@ $conn = koneksi();
 
 
 if (isset($_SESSION["login"])) {
-    header("Location: ../index.php");
+    header("Location: ../index.php#home");
     exit;
 }
 
@@ -14,7 +14,7 @@ if (isset($_POST["login"])) {
     $password = $_POST["password"];
 
     if (login($username, $password)) {
-        header("Location: ../index.php");
+        header("Location: ../index.php#home");
         exit;
     } else {
         $error = true;

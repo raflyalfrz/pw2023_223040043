@@ -62,7 +62,7 @@ if (isset($_GET['kategori'])) {
                     <h6 class="card-title"><?php echo $brg['nama_produk'] ?></h6>
                     <p class="card-text">Rp.<?php echo $brg['harga'] ?></p>
                     <a href="../tubes/php/detail.brg.php?id=<?php echo $brg['id'] ?>" class="btn btn5 btn-dark">Lihat detail</a>
-                    <button type="submit" class="btn btn6 btn-dark"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button type="submit" class="btn btn6 btn-dark" onclick="noacces(event)"><i class="fa-solid fa-cart-shopping"></i></button>
                     <input type="hidden" name="item_name" value="<?= $brg['nama_produk']; ?>">
                     <input type="hidden" name="item_harga" value="<?php echo $brg['harga'] ?>">
                 </div>

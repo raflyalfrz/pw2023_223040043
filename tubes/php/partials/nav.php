@@ -25,7 +25,7 @@
             </form>
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="keranjang.php" onclick="closeDropdownMenu()"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="nav-link nav-klik" href="#" onclick="noacces(event)"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

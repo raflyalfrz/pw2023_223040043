@@ -69,7 +69,7 @@ if (isset($_POST["register"])) {
                 </div>
             </nav>
 
-            <div class="container main">
+            <div class="container-fluid py-4 px-4">
                 <div class="row">
                     <div class="col-md-12 right">
                         <div class="input-box">
@@ -88,10 +88,6 @@ if (isset($_POST["register"])) {
                                     <label for="password2">Konfirmasi Password</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="file" class="form-control" name="gambar" id="gambar" required>
-                                </div>
-                                <br>
-                                <div class="input-field">
                                     <button type="submit" class="submit" name="register">Sign Up</button>
                                 </div>
                             </form>
@@ -100,9 +96,9 @@ if (isset($_POST["register"])) {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+    </div>
 
-        <?php require('partials/footer.admin.php') ?>
+    <?php require('partials/footer.admin.php') ?>

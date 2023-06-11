@@ -67,7 +67,7 @@ $brgs = query($query);
                         <h6 class="card-title"><?php echo $brg['nama_produk'] ?></h6>
                         <p class="card-text">Rp.<?php echo $brg['harga'] ?></p>
                         <a href="../tubes/php/detail.brg.php?id=<?php echo $brg['id'] ?>" class="btn btn5 btn-dark">Lihat detail</a>
-                        <button type="submit" class="btn btn6 btn-dark"><i class="fa-solid fa-cart-shopping"></i></button>
+                        <button type="submit" class="btn btn6 btn-dark" onclick="noacces(event)"><i class="fa-solid fa-cart-shopping"></i></button>
                         <input type="hidden" name="item_name" value="<?= $brg['nama_produk']; ?>">
                         <input type="hidden" name="item_harga" value="<?php echo $brg['harga'] ?>">
                     </div>
@@ -86,7 +86,7 @@ $brgs = query($query);
     <div class="row py-5">
         <div class="col-lg-8 m-auto text-center">
             <div class="text-center">
-                <img src="img/no-search.gif" width="400" alt="">
+                <img src="img/no-search.gif" width="350" alt="">
             </div>
 
         </div>

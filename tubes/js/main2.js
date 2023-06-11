@@ -81,3 +81,19 @@ form.addEventListener("submit", (e) => {
       btnKirim.classList.remove("d-none");
     });
 });
+
+function noacces(event) {
+  event.preventDefault();
+
+  Swal.fire({
+    title: "Maaf fitur ini belum tersedia!",
+    imageUrl: "./img/no.png",
+    imageAlt: "Custom image",
+    background: "#fff",
+    customClass: {
+      title: "text-dark",
+      content: "text-dark",
+      confirmButton: "text-white bg-dark",
+    },
+  });
+}

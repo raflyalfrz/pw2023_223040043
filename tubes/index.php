@@ -29,7 +29,7 @@ if (isset($_POST["cari"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Health Pharmacy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <!-- ....................Link css........................  -->
     <link rel="stylesheet" href="css/main.css" />
 
@@ -71,7 +71,7 @@ if (isset($_POST["cari"])) {
                 </form>
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link nav-klik" href="php/keranjang.php" onclick="closeDropdownMenu()"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a class="nav-link nav-klik" href="#" onclick="noacces(event)"><i class="fa-solid fa-cart-shopping"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -210,10 +210,10 @@ if (isset($_POST["cari"])) {
                             <div class="card border-0 mb-4 mt-4">
                                 <img src="img/<?php echo $brg['gambar'] ?>" class="card-img-top img-fluid" alt="hiu" />
                                 <div class="card-body">
-                                    <h6 class="card-title"><?php echo $brg['nama_produk'] ?></h6>
+                                    <h6 class="card-title"><?php echo strtoupper($brg['nama_produk']) ?></h6>
                                     <p class="card-text">Rp.<?php echo $brg['harga'] ?></p>
                                     <a href="../tubes/php/detail.brg.php?id=<?php echo $brg['id'] ?>" class="btn btn5 btn-dark">Lihat detail</a>
-                                    <button type="submit" class="btn btn6 btn-dark"><i class="fa-solid fa-cart-shopping"></i></button>
+                                    <button type="submit" class="btn btn6 btn-dark" onclick="noacces(event)"><i class="fa-solid fa-cart-shopping"></i></button>
                                     <input type="hidden" name="item_name" value="<?= $brg['nama_produk']; ?>">
                                     <input type="hidden" name="item_harga" value="<?php echo $brg['harga'] ?>">
                                 </div>
@@ -235,7 +235,7 @@ if (isset($_POST["cari"])) {
                     </h1>
                     <!-- ................tombol............. -->
                     <h6>Kunjungi Lembaga Kesehatan Terdekat atau</h6>
-                    <button class="btn3 mt-4">Daftar segera</button>
+                    <button class="btn3 mt-4" onclick="noacces(event)">Daftar segera</button>
                 </div>
             </div>
         </div>
@@ -251,7 +251,7 @@ if (isset($_POST["cari"])) {
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-4 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+                <div class="col-lg-4 text-center">
                     <img src="./img/dokter.png" class="img-fluid" alt="" />
                 </div>
                 <div class="col-lg-5 col-11">
@@ -330,8 +330,9 @@ if (isset($_POST["cari"])) {
 
     <!-- .....................Link script JS....................... -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main2.js"></script>
 </body>
 
 </html>

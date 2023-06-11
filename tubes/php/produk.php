@@ -65,8 +65,8 @@ if (isset($_POST["cari"])) {
                 </div>
 
                 <br>
-                <div id="container">
-                    <table class="table bg-white rounded shadow-sm  table-hover table-striped ">
+                <div id="container" style="overflow: auto;">
+                    <table class="table bg-white rounded shadow-sm table-hover table-striped ">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
