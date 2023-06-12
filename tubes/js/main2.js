@@ -97,3 +97,13 @@ function noacces(event) {
     },
   });
 }
+
+//menampilkan password yang diketik
+function ShowPw() {
+  var show = document.getElementById("show");
+  if (show.type == "password") {
+    show.type = "text";
+  } else {
+    show.type = "password";
+  }
+}

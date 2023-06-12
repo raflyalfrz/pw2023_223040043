@@ -26,3 +26,12 @@ keyword.addEventListener("keyup", function () {
   xhr.open("GET", "../js/ajax/barang.php?keyword=" + keyword.value, true);
   xhr.send();
 });
+
+function ShowPw() {
+  var show = document.getElementById("show");
+  if (show.type == "password") {
+    show.type = "text";
+  } else {
+    show.type = "password";
+  }
+}

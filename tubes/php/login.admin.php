@@ -94,8 +94,12 @@ if (isset($_POST["login1"])) {
                                     <label for="nama">Username</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="password" class="input" id="password" name="password" required>
+                                    <input type="password" class="input" id="show" name="password" required>
                                     <label for="password">Password</label>
+                                </div>
+                                <div class="cekbox px-2">
+                                    <label for="password">Show Password</label>
+                                    <input type="checkbox" onclick="ShowPw()">
                                 </div>
                                 <div class="input-field">
                                     <button type="submit" class="submit" name="login1">Sign In</button>

@@ -80,14 +80,18 @@ if (isset($_POST["register"])) {
                                     <label for="nama">Username</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="password" class="input" id="password" name="password" required>
+                                    <input type="password" class="input" id="show" name="password" required>
                                     <label for="password">Password</label>
                                 </div>
                                 <div class="input-field">
                                     <input type="password" class="input" id="password2" name="password2" required>
                                     <label for="password2">Konfirmasi Password</label>
                                 </div>
-                                <div class="input-field">
+                                <div class="cekbox px-2">
+                                    <label for="password">Show Password</label>
+                                    <input type="checkbox" onclick="ShowPw()">
+                                </div>
+                                <div class="input-field py-2">
                                     <button type="submit" class="submit" name="register">Sign Up</button>
                                 </div>
                             </form>

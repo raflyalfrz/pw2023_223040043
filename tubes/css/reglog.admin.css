@@ -163,6 +163,10 @@ i {
   font-size: small;
   margin-top: 25px;
 }
+
+.cekbox {
+  font-size: small;
+}
 span a {
   text-decoration: none;
   font-weight: 700;

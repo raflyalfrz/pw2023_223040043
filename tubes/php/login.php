@@ -60,10 +60,14 @@ if (isset($_POST["login"])) {
                                 <label for="username">Username</label>
                             </div>
                             <div class="input-field">
-                                <input type="password" class="input" id="password" name="password" required>
+                                <input type="password" class="input" id="show" name="password" required>
                                 <label for="password">Password</label>
                             </div>
-                            <div class="input-field">
+                            <div class="cekbox px-2">
+                                <label for="password">Show Password</label>
+                                <input type="checkbox" onclick="ShowPw()">
+                            </div>
+                            <div class="input-field py-2">
                                 <button type="submit" class="submit" name="login">Sign In</button>
                             </div>
                         </form>
@@ -82,6 +86,16 @@ if (isset($_POST["login"])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="../tubes/js/main.js"></script>
+    <script>
+        function ShowPw() {
+            var show = document.getElementById("show");
+            if (show.type == "password") {
+                show.type = "text";
+            } else {
+                show.type = "password";
+            }
+        }
+    </script>
 </body>
 
 </html>
