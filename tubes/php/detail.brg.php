@@ -85,10 +85,6 @@ if (isset($_GET['id'])) {
                 </div>
             </div>
         </section>
-
-
-
-
 <?php
         require('partials/footer.php');
     } else {
